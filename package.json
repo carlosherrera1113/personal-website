@@ -10,6 +10,7 @@
     "typescript": "^5"
   },
   "scripts": {
-    "dev": "bun --watch run index.ts"
+    "dev": "bun --watch run index.ts",
+    "clean": "rm -rf dist && echo 'done.'"
   }
 }
