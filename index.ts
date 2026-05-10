@@ -1,6 +1,5 @@
-Bun.serve({
+const server = Bun.serve({
   hostname: "127.0.0.1",
-  port: 3002,
   async fetch() {
     const file = Bun.file("index.html");
 
@@ -12,4 +11,4 @@ Bun.serve({
   },
 });
 
-console.log("Server running at http://localhost:3002");
+console.log(`Server running at http://localhost:${server.port}`);
