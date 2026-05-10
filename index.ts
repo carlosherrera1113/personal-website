@@ -1,1 +1,15 @@
-console.log("Hello via Bun!");
+Bun.serve({
+  hostname: "127.0.0.1",
+  port: 3002,
+  async fetch() {
+    const file = Bun.file("index.html");
+
+    return new Response(file, {
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+      },
+    });
+  },
+});
+
+console.log("Server running at http://localhost:3002");
